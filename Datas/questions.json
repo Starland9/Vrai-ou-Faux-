@@ -1,0 +1,10 @@
+[
+	{
+		"question" : "A ou b ?",
+		"response" : 1
+	},
+	{
+		"question": "A ou b ou c ?",
+		"response" : 0
+	}
+]

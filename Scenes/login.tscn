@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://bot23mxpdo06b"]
+
+[ext_resource type="Script" path="res://Scenes/login.gd" id="1_cil6g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26br1"]
+bg_color = Color(0.188235, 0.192157, 0.745098, 1)
+
+[node name="Login" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cil6g")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113725, 0.113725, 0.113725, 1)
+
+[node name="LoginButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 1.0
+anchor_right = 0.9
+anchor_bottom = 1.0
+offset_top = -257.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_26br1")
+text = "CONNEXION"
+
+[node name="Infos" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="button_up" from="LoginButton" to="." method="_on_login_button_button_up"]

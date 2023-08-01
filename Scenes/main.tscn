@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://bn0vh7lr7k87a"]
+
+[ext_resource type="Theme" uid="uid://c131df0yy0n0a" path="res://Themes/main_theme.tres" id="1_nxsc6"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="2_xxe7n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5lge"]
+font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nn84p"]
+bg_color = Color(0, 0.486275, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wok0a"]
+bg_color = Color(0, 0.494118, 0.411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3twb"]
+bg_color = Color(0, 0.419608, 0.345098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tojt1"]
+bg_color = Color(0.776471, 0, 0.203922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n73ky"]
+bg_color = Color(0.694539, 5.64092e-05, 0.553134, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nxsc6")
+script = ExtResource("2_xxe7n")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113725, 0.113725, 0.113725, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+offset_bottom = 151.0
+grow_horizontal = 2
+theme = ExtResource("1_nxsc6")
+text = "Comment tu vas ?"
+label_settings = SubResource("LabelSettings_d5lge")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.81
+anchor_right = 1.0
+anchor_bottom = 0.81
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="TrueBtn" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_nn84p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wok0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p3twb")
+text = "VRAI"
+
+[node name="FalseBtn" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tojt1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n73ky")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n73ky")
+text = "FAUX"

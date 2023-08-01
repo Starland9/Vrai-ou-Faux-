@@ -1,0 +1,40 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="VOF"
+run/main_scene="res://Scenes/main.tscn"
+config/features=PackedStringArray("4.0", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+QM="*res://Autoloads/questions_manager.gd"
+Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
+
+[display]
+
+window/size/viewport_width=430
+window/size/viewport_height=800
+window/handheld/orientation=1
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="mobile"
